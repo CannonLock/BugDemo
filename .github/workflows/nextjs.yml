@@ -70,12 +70,7 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: |
-          yarn run export
-          pwd
-          ls
-          cd ../
-          pwd
-          ls
+          npm run export
           find ./out | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 
       - name: Deploy 🚀
