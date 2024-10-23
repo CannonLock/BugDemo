@@ -72,6 +72,7 @@ jobs:
         run: |
           yarn run export
           pwd
+          ls
           cd ../
           find ./out | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 
