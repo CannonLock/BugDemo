@@ -71,6 +71,7 @@ jobs:
       - name: Build with Next.js
         run: |
           npm run export
+          ls -la
           find ./out | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 
       - name: Deploy 🚀
