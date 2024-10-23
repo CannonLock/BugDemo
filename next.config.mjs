@@ -1,3 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {basePath: "/BugDemo"}
+const nextConfig = {
+	output: "export",
+	basePath: "/BugDemo"
+}
 export default nextConfig;

@@ -46,6 +46,10 @@ jobs:
       - name: Build with Next.js
         run: |
           npm run export
+          
+          # Delete index.txt for test-page
+          rm out/test-page.txt
+          
           find ./out | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 
       - name: Deploy 🚀
