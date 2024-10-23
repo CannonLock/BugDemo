@@ -48,7 +48,7 @@ jobs:
           npm run export
           
           # Delete index.txt for test-page
-          rm out/test-page.txt
+          rm out/test-page/index.txt
           
           find ./out | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 
