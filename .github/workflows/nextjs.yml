@@ -74,6 +74,8 @@ jobs:
           pwd
           ls
           cd ../
+          pwd
+          ls
           find ./out | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 
       - name: Deploy 🚀
