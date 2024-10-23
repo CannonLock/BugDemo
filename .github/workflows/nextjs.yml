@@ -52,9 +52,12 @@ jobs:
           
           find ./out | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 
-      - name: Deploy 🚀
-        # Run this step if on schedule or push event
-        if: github.event_name == 'push' || github.event_name == 'schedule'
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: out # The folder the action should deploy.
+          # Upload entire repository
+          path: './out'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
